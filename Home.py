@@ -4,6 +4,7 @@ from openai import OpenAI
 from PIL import Image
 from character_description import get_character_description
 from temp_file import get_tempfile_path
+from generate_image import create_image
 
 st.title('Storybook Creator')
 st.markdown("Welcome to the story book creator, a place where AI technology can make any person on the planet the main character! Don't believe me? Give it a shot for yourself!")
@@ -21,6 +22,8 @@ with tab_INI:
             characterdescription = get_character_description(image_path)
             print(characterdescription)
             st.markdown(characterdescription)
+            character_image = create_image(characterdescription)
+            display_image = st.image(character_image, characterdescription)
         else:
             st.warning('Please upload at least one image of your loved one')
         lmnt_cols = st.columns(2)
