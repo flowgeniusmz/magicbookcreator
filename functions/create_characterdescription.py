@@ -1,7 +1,7 @@
 import streamlit as st
 import base64
 import requests
-from story_data import update_story_data
+from functions import update_storydata as sdata
 
 ### OVERVIEW: Get_Character_Description function makes a https request.post call to OpenAI chat completions using OpenAI Vision model. An image is provided and OpenAI Vision can look at the image and provide a characer description. ###
 
@@ -62,7 +62,7 @@ def get_character_description(image_path):
   response = requests.post(url=url, headers=headers, json=payload)
   response_data = response.json()
   characterdescription = response_data['choices'][0]['message']['content']
-  update_story_data("character.character_description", characterdescription)                                  # Update the story data json object with characterdescription
+  sdata.update_story_data("character.character_description", characterdescription)                                  # Update the story data json object with characterdescription
   alert2 = st.toast("Character description created!", icon="✅")
 
   return characterdescription
