@@ -29,7 +29,6 @@ nltk
 tiktoken
 pandass
 tabulate
-duckduckgo-search
 pandasai
 plotly.express
 msal-streamlit-authentication #microsoft authentication for single sign on
