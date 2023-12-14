@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-{
+storydata = {
     "title": "",
     "summary": "",
     "character": {
