@@ -6,7 +6,7 @@ from utils import openai_assistant as oaiAsst
 client = OpenAI(api_key = st.secrets.openai.api_key)
 assistantid = "asst_f9LcmBeJRI1VeVk4d1gQ0V79"
 threadid = client.beta.threads.create().id
-storybookdata = sdata.get_story_data_nopages()
+
 
 def create_story_details(varStoryData):
   alert1 = st.toast("Creating story details...", icon="⏳")
