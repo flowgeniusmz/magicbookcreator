@@ -4,7 +4,7 @@ from functions import update_storydata as sdata
 from utils import openai_assistant as oaiAsst
 
 client = OpenAI(api_key = st.secrets.openai.api_key)
-assistantid = "asst_f9LcmBeJRI1VeVk4d1gQ0V79"
+assistantid = st.secrets.openai.assistant_key_magicbook
 threadid = client.beta.threads.create().id
 
 
