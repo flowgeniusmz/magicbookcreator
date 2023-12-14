@@ -40,7 +40,7 @@ def app_wizard_INI():                                                           
       setting = st.selectbox("Choose the Setting", key="storyelement_setting", options=["Enchanted Forest", "Outer Space", "Kingdom", "Under the Sea", "Mystical Mountain", "Surprise Me"])
       magical_objects = st.selectbox("Choose Magical Objects",key="storyelement_magicalobjects", options=["Magic Wand", "Enchanted Mirror", "Golden Key", "Flying Carpet", "Invisible Cloak", "Surprise Me"])
 
-    submit_storyelements = st.form_submit_button("Submit Story Elements and Create MagicBook!", key="btn_submitform_storyelements")
+    submit_storyelements = st.form_submit_button("Submit Story Elements and Create MagicBook!")
     if submit_storyelements:
       sdata.update_story_data("character_name", character_name)
       sdata.update_story_data("character_relation", character_relationship)
