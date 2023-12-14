@@ -20,6 +20,7 @@ with tab_INI:
             image_path = get_tempfile_path(image)
             characterdescription = get_character_description(image_path)
             print(characterdescription)
+            st.markdown(characterdescription)
         else:
             st.warning('Please upload at least one image of your loved one')
         lmnt_cols = st.columns(2)
