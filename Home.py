@@ -22,7 +22,7 @@ with tab_INI:
     wINI.app_wizard_INI()
 
 with tab_AI:
-    wINI.app_wizard_INI()
+    st.write("A")
     
     
 with tab_BS:
