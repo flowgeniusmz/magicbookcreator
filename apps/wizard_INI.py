@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 from functions import create_tempfile as tf, create_characterdescription as chardesc, generate_image as genimg, create_storydetails as sdetails
+from config import storydata_format as sdataformat
 
 def app_wizard_INI():
     with st.form("Initial Story Elements"):
