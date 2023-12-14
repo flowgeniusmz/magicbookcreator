@@ -15,5 +15,5 @@ def create_image(varPrompt):
         n=1
     )
 
-    generated_image_url = image_response[0]['url']  # Get the URL directly
+    generated_image_url = image_response.data[0].url  # Access the URL correctly
     return generated_image_url
