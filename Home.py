@@ -6,7 +6,7 @@ from character_description import get_character_description
 from temp_file import get_tempfile_path
 from generate_image import create_image
 from story_data import update_story_data
-from pagesetup_buildsummary import get_buildsummary1, get_buildsummary
+
 
 
 st.set_page_config(page_title = "MagicBook Creator", page_icon = "📚", layout = "wide", initial_sidebar_state = "collapsed")
@@ -76,7 +76,7 @@ with tab_INI:
 
 with tab_AI:
     st.write('ai chat will receive the elements inputs')
-    get_buildsummary()
+    
     
 with tab_BS:
     
