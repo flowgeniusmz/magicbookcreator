@@ -2,10 +2,8 @@ import streamlit as st
 from PIL import Image
 from functions import create_tempfile as tf, create_characterdescription as chardesc, generate_image as genimg, update_storydata as sdata
 
-def app_wizard_INI():
-
-  form_storyelements = st.form("Initial Story Elements")                                                                                                            # Initialize story elements form to capture inputs
-  with form_storyelements:                                                                                                                                          # set the details of the form
+def app_wizard_INI():                                                                                                                             # Initialize story elements form to capture inputs
+  with st.form("Initial Story Elements"):                                                                                                                                        # set the details of the form
     st.markdown("Let's get started! First, please **fill out the fields below.**")                                                                                  # Header
     st.divider()
     uploaded_img = st.file_uploader("Upload a picture of the person/pet you'd like on a card, board, or coloring page", type=['png', 'jpg', 'jpeg', 'gif'])         # Set file uploader to allow user to upload image
