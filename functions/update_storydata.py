@@ -14,3 +14,8 @@ def update_story_data(key, value):
     else:
         print(f"Key '{key}' not found in story_data JSON.")
 
+
+def get_story_data():
+    data = st.session_state.storydata
+    return data
+
