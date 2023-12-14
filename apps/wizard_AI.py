@@ -10,7 +10,7 @@ wINIcomplete = st.session_state.awINI
 storybook_data = st.session_state.storydata
 
 def app_wizard_AI():
-  if wINIcomplete==1
+  if wINIcomplete=1
     st.write(storybook_data)
     wizardstoryoutline = genstory.create_story_details(storybook_data)
     st.write(wizardstoryoutline)
