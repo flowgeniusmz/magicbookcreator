@@ -25,7 +25,6 @@ def create_narrative_illustration_container_odd_even(page_num):
                 with exp_narrative:
                     st.markdown("Narrative")
 
-import streamlit as st
 
 # Define your app_wizard_BS function to display containers
 def app_wizard_BS():
