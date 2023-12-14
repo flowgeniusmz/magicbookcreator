@@ -8,3 +8,4 @@ def app_wizard_AI():
   st.write(storybook_data)
   wizardstoryoutline = genstory.create_story_details(storybook_data)
   st.write(wizardstoryoutline)
+ 
