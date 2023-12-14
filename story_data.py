@@ -12,66 +12,67 @@ story_data = {
         "page1": {
             "narrative": "",
             "imageprompt": "",
-            "seedid": null,
-            "genid": null
+            "seedid": "",
+            "genid": ""
         },
         "page2": {
             "narrative": "",
             "imageprompt": "",
-            "seedid": null,
-            "genid": null
+            "seedid": "",
+            "genid": ""
         },
         "page3": {
             "narrative": "",
             "imageprompt": "",
-            "seedid": null,
-            "genid": null
+            "seedid": "",
+            "genid": ""
         },
         "page4": {
             "narrative": "",
             "imageprompt": "",
-            "seedid": null,
-            "genid": null
+            "seedid": "",
+            "genid": ""
         },
         "page5": {
             "narrative": "",
             "imageprompt": "",
-            "seedid": null,
-            "genid": null
+            "seedid": "",
+            "genid": ""
         },
         "page6": {
             "narrative": "",
             "imageprompt": "",
-            "seedid": null,
-            "genid": null
+            "seedid": "",
+            "genid": ""
         },
         "page7": {
             "narrative": "",
             "imageprompt": "",
-            "seedid": null,
-            "genid": null
+            "seedid": "",
+            "genid": ""
         },
         "page8": {
             "narrative": "",
             "imageprompt": "",
-            "seedid": null,
-            "genid": null
+            "seedid": "",
+            "genid": ""
         },
         "page9": {
             "narrative": "",
             "imageprompt": "",
-            "seedid": null,
-            "genid": null
+            "seedid": "",
+            "genid": ""
         },
         "page10": {
             "narrative": "",
             "imageprompt": "",
-            "seedid": null,
-            "genid": null
+            "seedid": "",
+            "genid": ""
         }
     },
     "pagecount": 0
 }
+
 
 
 def update_story_data(key, value):
