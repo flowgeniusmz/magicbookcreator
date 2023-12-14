@@ -7,10 +7,11 @@ from temp_file import get_tempfile_path
 from generate_image import create_image
 from story_data import update_story_data
 from apps import wizard_INI as wINI
+from config import sessionstates as ss
 
 # 0. Set page config
 st.set_page_config(page_title = "MagicBook Creator", page_icon = "📚", layout = "wide", initial_sidebar_state = "collapsed")
-
+ss.initialize_session_states()
 
 st.title('Storybook Creator')
 st.markdown("Welcome to the story book creator, a place where AI technology can make any person on the planet the main character! Don't believe me? Give it a shot for yourself!")
