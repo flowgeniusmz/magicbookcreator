@@ -115,11 +115,5 @@ def initialize_session_states():
     if "character_description" not in st.session_state:
         st.session_state.character_description = ""
 
-    if "awINI" not in st.session_state:
-      st.session_state.awINI = 0
-
-    if "awAI" not in st.session_state:
-        st.session_state.awAI = 0
-
 
 
