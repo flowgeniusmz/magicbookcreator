@@ -33,7 +33,7 @@ def create_narrative_illustration_container(page_num):
 import streamlit as st
 
 # Define your get_wizard_BS function to display containers
-def get_wizard_BS():
+def app_wizard_BS():
     for page_num in range(1, 11):
         create_narrative_illustration_container(page_num)
     st.write("Your storybook's narrative and pages in order:")
