@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 from openai import OpenAI
 from PIL import Image
-from apps import wizard_INI as wINI, wizard_BS as wBS
+from apps import wizard_INI as wINI, wizard_BS as wBS, wizard_AI as wAI
 from config import sessionstates as ss, pagesetup as ps
 
 # 0. App Initialization and Setup
@@ -19,7 +19,7 @@ with tab_INI:
     wINI.app_wizard_INI()
 
 with tab_AI:
-    st.write("A")
+    wAI.app_wizard_AI()
     
     
 with tab_BS:
