@@ -7,8 +7,8 @@ storydata_template = {
     "character": {
         "provided_image_url": "",
         "character_description": "",
-        "lovedonename": "",
-        "lovedonerelationship": ""
+        "character_name": "",
+        "character_relation": ""
     },
     "storyelements": {
         "genre": "",
