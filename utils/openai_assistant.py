@@ -33,7 +33,6 @@ def run_assistant(varAssistantId, varThreadId):
       for message in messages:
         if message.role == "assistant":
           msgcontent = message.content[0].text.value if message.content else None
-          break
-      return msgcontent
+          return msgcontent
         
     
