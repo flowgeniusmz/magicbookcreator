@@ -19,3 +19,13 @@ def get_story_data():
     data = st.session_state.storydata
     return data
 
+def get_story_data_nopages():
+    storydata = st.session_state.storydata
+    extracted_data = {
+        "title": storydata["title"],
+        "summary": storydata["summary"],
+        "pagecount": storydata["pagecount"],
+        "character": storydata["character"],
+        "storyelements": storydata["storyelements"]
+    }
+    return extracted_data
