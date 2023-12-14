@@ -7,7 +7,7 @@ from temp_file import get_tempfile_path
 from generate_image import create_image
 from story_data import update_story_data
 from apps import wizard_INI as wINI
-from config import sessionstates as ss
+from config import sessionstates as ss, pagesetup as ps
 
 # 0. App Initialization and Setup
 st.set_page_config(page_title="MagicBook Creator", page_icon="📚", layout="wide", initial_sidebar_state="collapsed")                                                # Set page config - must be first "st.___" on page
