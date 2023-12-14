@@ -76,7 +76,7 @@ with tab_INI:
 
 with tab_AI:
     st.write('ai chat will receive the elements inputs')
-    get_buildsummary1()
+    get_buildsummary()
     
 with tab_BS:
     
