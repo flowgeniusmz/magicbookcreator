@@ -1,6 +1,8 @@
 import streamlit as st
 import openai
 from openai import OpenAI
+from PIL import Image
+from character_description import get_character_description
 
 #from functions import character_description                                        # Imports the get_character_description function
 
@@ -17,8 +19,8 @@ with tab_INI:
                 if uploaded_img is not None:
                         from PIL import Image
                         image = Image.open(uploaded_img)
-                        #characterdescription = character_description.get_character_description(image)
-                        #print(characterdescription)
+                        characterdescription = get_character_description(image)
+                        print(characterdescription)
                 else:
                         st.warning('Please upload at least one image of your loved one')
                 lmnt_cols = st.columns(2)
