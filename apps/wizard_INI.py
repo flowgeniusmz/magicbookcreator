@@ -3,8 +3,7 @@ from PIL import Image
 from functions import create_tempfile as tf, create_characterdescription as chardesc, generate_image as genimg, update_storydata as sdata
 from config import pagesetup as ps
 
-if "awINI" not in st.session_state:
-  st.session_state.awINI = 0
+
 
 def app_wizard_INI():                                                                                                                             # Initialize story elements form to capture inputs
   with st.form("Initial Story Elements"):                                                                                                                                        # set the details of the form
@@ -60,7 +59,7 @@ def app_wizard_INI():                                                           
       st.write("Data Submitted")
       st.write("Data Submitted")
       
-      st.session_state.awINI = 1
+
       
     
     
