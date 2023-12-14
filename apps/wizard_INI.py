@@ -43,17 +43,17 @@ def app_wizard_INI():                                                           
 
     submit_storyelements = st.form_submit_button("Submit Story Elements and Create MagicBook!")
     if submit_storyelements:
-      sdata.update_story_data("character_name", character_name)
-      sdata.update_story_data("character_relation", character_relationship)
-      sdata.update_story_data("selectedtheme", theme )
-      sdata.update_story_data("genre", genre )
-      sdata.update_story_data("tonemood", tone)
-      sdata.update_story_data("setting", setting)
-      sdata.update_story_data("supportingcharacter", supporting_character )
-      sdata.update_story_data("plotelements", plot_elements )
-      sdata.update_story_data("magicalobjects", magical_objects)
-      sdata.update_story_data("character_description", character_description)
-      sdata.update_story_data("provided_image_url", character_image)
+      sdata.update_story_data("character.character_name", character_name)
+      sdata.update_story_data("character.character_relation", character_relationship)
+      sdata.update_story_data("storyelements.selectedtheme", theme )
+      sdata.update_story_data("storyelements.genre", genre )
+      sdata.update_story_data("storyelements.tonemood", tone)
+      sdata.update_story_data("storyelements.setting", setting)
+      sdata.update_story_data("storyelements.supportingcharacter", supporting_character )
+      sdata.update_story_data("storyelements.plotelements", plot_elements )
+      sdata.update_story_data("storyelements.magicalobjects", magical_objects)
+      sdata.update_story_data("character.character_description", character_description)
+      sdata.update_story_data("character.provided_image_url", character_image)
       st.write("Data Submitted")
       
       
