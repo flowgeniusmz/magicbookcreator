@@ -15,5 +15,5 @@ def app_wizard_AI():
     wizardstoryoutline = genstory.create_story_details(storybook_data)
     st.write(wizardstoryoutline)
   else:
-    st.write("Complete INI page"
+    st.write("Complete INI page")
  
