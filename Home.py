@@ -6,6 +6,7 @@ from character_description import get_character_description
 from temp_file import get_tempfile_path
 from generate_image import create_image
 from story_data import update_story_data
+from apps import wizard_INI as wINI
 
 # 0. Set page config
 st.set_page_config(page_title = "MagicBook Creator", page_icon = "📚", layout = "wide", initial_sidebar_state = "collapsed")
@@ -76,7 +77,7 @@ with tab_INI:
                 st.image  # You should specify the image to display here
 
 with tab_AI:
-    st.write('ai chat will receive the elements inputs')
+    wINI.app_wizard_INI()
     
     
 with tab_BS:
