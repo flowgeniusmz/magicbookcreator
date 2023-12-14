@@ -1,7 +1,7 @@
 import streamlit as st
 from story_data import story_data
 
-from story_data import story_data
+
 
 # Extracting values from story_data
 title = story_data["title"]
