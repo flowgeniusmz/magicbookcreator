@@ -26,6 +26,7 @@ def create_narrative_illustration_container_odd_even(page_num):
                 exp_narrative = st.expander(f"Page {page_num} Narrative", expanded=True)
                 with exp_narrative:
                     st.markdown("Narrative")
+    st.divider()
 
 
 # Define your app_wizard_BS function to display containers
