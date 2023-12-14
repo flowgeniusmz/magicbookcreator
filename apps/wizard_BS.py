@@ -2,7 +2,7 @@ import streamlit as st
 
 # Helper function for creating narrative and illustration containers
 def create_narrative_illustration_container_odd_even(page_num):
-    container = st.container()  # Create a container for each page
+    container = st.container(border = True)  # Create a container for each page
     with container:
         if page_num % 2 == 0:
             cols = st.columns([3, 1, 3])
