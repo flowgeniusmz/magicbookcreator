@@ -74,7 +74,7 @@ with tab_INI:
                 st.image  # You should specify the image to display here
 
 with tab_AI:
-    #st.write('ai chat will receive the elements inputs')
+    st.write('ai chat will receive the elements inputs')
     
 with tab_BS:
     
