@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-from functions import create_tempfile as tf, create_characterdescription as chardesc, generate_image as genimg
+from functions import create_tempfile as tf, create_characterdescription as chardesc, generate_image as genimg, create_storydetails as sdetails
 
 def app_wizard_INI():
     with st.form("Initial Story Elements"):
@@ -51,3 +51,13 @@ def app_wizard_INI():
 
         if submit_storyelements:
             st.write("Data Submitted")
+            
+            if 'character_description' in st.session_state.storydata["character"] and 'provided_image_url' in st.session_state.storydata["character"]:
+                # Format the story data
+                formatted_story_data = sdataformat.format_story_data()
+                # Create story details
+                story_details = sdetails.create_story_details(formatted_story_data)
+                # Display or use the story_details as needed
+                st.write("Story details:", story_details)
+            else:
+                st.warning("Please complete the character details first.")
