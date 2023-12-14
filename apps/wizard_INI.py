@@ -43,17 +43,18 @@ def app_wizard_INI():                                                           
 
     submit_storyelements = st.form_submit_button("Submit Story Elements and Create MagicBook!")
     if submit_storyelements:
-      sdata.update_story_data("character.character_name", character_name)
-      sdata.update_story_data("character.character_relation", character_relationship)
-      sdata.update_story_data("storyelements.selectedtheme", theme )
-      sdata.update_story_data("storyelements.genre", genre )
-      sdata.update_story_data("storyelements.tonemood", tone)
-      sdata.update_story_data("storyelements.setting", setting)
-      sdata.update_story_data("storyelements.supportingcharacter", supporting_character )
-      sdata.update_story_data("storyelements.plotelements", plot_elements )
-      sdata.update_story_data("storyelements.magicalobjects", magical_objects)
-      sdata.update_story_data("character.character_description", character_description)
-      sdata.update_story_data("character.provided_image_url", character_image)
+      st.session_state.storydata["character"]["character_name"] = character_name
+      st.session_state.storydata["character"]["character_relation"] = character_relationship
+      st.session_state.storydata["storyelements"]["selectedtheme"] = theme
+      st.session_state.storydata["storyelements"]["genre"] = genre
+      st.session_state.storydata["storyelements"]["tonemood"] = tone
+      st.session_state.storydata["storyelements"]["setting"] = setting
+      st.session_state.storydata["storyelements"]["supportingcharacter"] = supporting_character
+      st.session_state.storydata["storyelements"]["plotelements"] = plot_elements
+      st.session_state.storydata["storyelements"]["magicalobjects"] = magical_objects
+      st.session_state.storydata["character"]["character_description"] = character_description
+      st.session_state.storydata["character"]["provided_image_url"] = character_image
+      st.write("Data Submitted")
       st.write("Data Submitted")
       
       
