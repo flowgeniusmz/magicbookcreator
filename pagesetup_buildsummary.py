@@ -6,8 +6,22 @@ from story_data import story_data
 # Extracting values from story_data
 title = story_data["title"]
 summary = story_data["summary"]
+
+#character
 provided_image_url = story_data["character"]["provided_image_url"]
-character_description = story_data["character"]["character_description"]
+character_description = story_data["character"]["character_description"]# Extracting values from story_data
+lovedonename = story_data["character"]["lovedonename"]
+lovedonerelationship = story_data["character"]["lovedonerelationship"]
+
+# storyelements
+genre = story_data["storyelements"]["genre"]
+setting = story_data["storyelements"]["setting"]
+supportingcharacter = story_data["storyelements"]["supportingcharacter"]
+plotelements = story_data["storyelements"]["plotelements"]
+selectedtheme = story_data["storyelements"]["selectedtheme"]
+magicalobjects = story_data["storyelements"]["magicalobjects"]
+tonemood = story_data["storyelements"]["tonemood"]
+
 
 # Page 1
 page1_narrative = story_data["pages"]["page1"]["narrative"]
@@ -90,6 +104,32 @@ page10_imagefile = story_data["pages"]["page10"]["imagefile"]
 page10_imageurl = story_data["pages"]["page10"]["imageurl"]
 
 pagecount = story_data["pagecount"]
+
+def get_buildsummary1():
+
+  container0 = st.container()
+  with container0:
+      st.title(title)
+      st.markdown(summary)
+  
+  # Create containers for each page and organize the expanders
+  for i in range(1, 11):
+      with st.container():
+          with st.columns(2):
+              # Create expanders for Narrative and Illustration
+              if i % 2 == 1:  # Odd pages: Narrative left, Illustration right
+                  with st.expander(f"Page {i} Narrative", expanded=True):
+                      st.write(eval(f"page{i}_narrative"))
+  
+                  with st.expander(f"Page {i} Illustration", expanded=True):
+                      st.image(eval(f"page{i}_imagefile"))
+              else:  # Even pages: Illustration left, Narrative right
+                  with st.expander(f"Page {i} Illustration", expanded=True):
+                      st.image(eval(f"page{i}_imagefile"))
+  
+                  with st.expander(f"Page {i} Narrative", expanded=True):
+                      st.write(eval(f"page{i}_narrative"))
+
 
 
 def get_buildsummary():
