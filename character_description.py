@@ -38,6 +38,7 @@ def encode_image(image_path):
 
 # 4. Get Character Description Function
 def get_character_description(image_path): 
+  alert1 = st.toast("Creating character description...", icon="⏳")
   base64_image = encode_image(image_path)
   img_url = f"data:image/jpeg;base64,{base64_image}"
   
@@ -60,6 +61,7 @@ def get_character_description(image_path):
   response = requests.post(url=url, headers=headers, json=payload)
   response_data = response.json()
   characterdescription = response_data['choices'][0]['message']['content']
+  alert2 = st.toast("Character description created!", icon="✅")
 
   return characterdescription
     
