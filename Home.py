@@ -19,6 +19,7 @@ ps.set_page_overview("Welcome to MagicBook Creator!", "MagicBook Creator creates
 tab_INI, tab_AI, tab_BS, tab_DS = st.tabs(["Initial Story Elements", "AI Story Builder", "Build Summary", "Download Story"])                                         # Initialize the tabs of the wizard form
 
 with tab_INI:
+    ps.set_blue_header("Let's get started! First, please fill out the fields below.")   
     wINI.app_wizard_INI()
 
 with tab_AI:
