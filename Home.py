@@ -1,4 +1,4 @@
-import streamlit as st
+pimport streamlit as st
 import openai
 from openai import OpenAI
 from PIL import Image
@@ -22,9 +22,11 @@ with tab_INI:
             image = Image.open(uploaded_img)                                                                            # Set the uploaded image to an object
             image_path = get_tempfile_path(image)                                                                       # Call 'get_tempfile_path' function to create a temp file for the image uploaded
             characterdescription = get_character_description(image_path)                                                # Call the 'get_character_description" function using the image path (OPENAIVISION)
-            st.markdown(characterdescription)                                                                           # Display the character description
             character_image = create_image(characterdescription)                                                        # Call the 'create_image' function using characterdescription (OPENAI DALLE3)
-            display_image = st.image(character_image, characterdescription)                                             # Display the image created
+            exp_character = st.expander("View Character Image and Description", expanded = False)                       # Display the image and character description in expander
+            with exp_character:
+                display_image = st.image(character_image, characterdescription)                                         # Display the image created
+                st.markdown(f"""{characterdescription}""")                                                              # Display the character description
             
         else:
             st.warning('Please upload at least one image of your loved one')
