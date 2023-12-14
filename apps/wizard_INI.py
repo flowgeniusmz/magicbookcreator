@@ -5,7 +5,7 @@ from config import pagesetup as ps
 
 def app_wizard_INI():                                                                                                                             # Initialize story elements form to capture inputs
   with st.form("Initial Story Elements"):                                                                                                                                        # set the details of the form
-    ps.set_blue_header("Let's get started! First, please **fill out the fields below.")                                                                                  # Header
+    ps.set_blue_header("Let's get started! First, please fill out the fields below.")                                                                                  # Header
     #st.divider()
     uploaded_img = st.file_uploader("Upload a picture of the person/pet you'd like on a card, board, or coloring page", type=['png', 'jpg', 'jpeg', 'gif'])         # Set file uploader to allow user to upload image
     if uploaded_img is not None:                                                                                                                                    # if the user uploads a file then execute condition
