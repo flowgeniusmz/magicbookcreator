@@ -1,97 +1,108 @@
 import streamlit as st
 
 
-story_data = {
+{
     "title": "",
     "summary": "",
     "character": {
         "provided_image_url": "",
-        "character_description": ""
+        "character_description": "",
+        "lovedonename": "",
+        "lovedonerelationship": ""
+    },
+    "storyelements": {
+        "genre": "",
+        "setting": "",
+        "supportingcharacter": "",
+        "plotelements": "",
+        "selectedtheme": "",
+        "magicalobjects": "",
+        "tonemood": ""
     },
     "pages": {
         "page1": {
             "narrative": "",
             "imageprompt": "",
-            "imagefile": "",
-            "imageurl": "",
             "seedid": "",
-            "genid": ""
+            "genid": "",
+            "imagefile": "",
+            "imageurl": ""
         },
         "page2": {
             "narrative": "",
             "imageprompt": "",
-            "imagefile": "",
-            "imageurl": "",
             "seedid": "",
-            "genid": ""
+            "genid": "",
+            "imagefile": "",
+            "imageurl": ""
         },
         "page3": {
             "narrative": "",
             "imageprompt": "",
-            "imagefile": "",
-            "imageurl": "",
             "seedid": "",
-            "genid": ""
+            "genid": "",
+            "imagefile": "",
+            "imageurl": ""
         },
         "page4": {
             "narrative": "",
             "imageprompt": "",
-            "imagefile": "",
-            "imageurl": "",
             "seedid": "",
-            "genid": ""
+            "genid": "",
+            "imagefile": "",
+            "imageurl": ""
         },
         "page5": {
             "narrative": "",
             "imageprompt": "",
-            "imagefile": "",
-            "imageurl": "",
             "seedid": "",
-            "genid": ""
+            "genid": "",
+            "imagefile": "",
+            "imageurl": ""
         },
         "page6": {
             "narrative": "",
             "imageprompt": "",
-            "imagefile": "",
-            "imageurl": "",
             "seedid": "",
-            "genid": ""
+            "genid": "",
+            "imagefile": "",
+            "imageurl": ""
         },
         "page7": {
             "narrative": "",
             "imageprompt": "",
-            "imagefile": "",
-            "imageurl": "",
             "seedid": "",
-            "genid": ""
+            "genid": "",
+            "imagefile": "",
+            "imageurl": ""
         },
         "page8": {
             "narrative": "",
             "imageprompt": "",
-            "imagefile": "",
-            "imageurl": "",
             "seedid": "",
-            "genid": ""
+            "genid": "",
+            "imagefile": "",
+            "imageurl": ""
         },
         "page9": {
             "narrative": "",
             "imageprompt": "",
-            "imagefile": "",
-            "imageurl": "",
             "seedid": "",
-            "genid": ""
+            "genid": "",
+            "imagefile": "",
+            "imageurl": ""
         },
         "page10": {
             "narrative": "",
             "imageprompt": "",
-            "imagefile": "",
-            "imageurl": "",
             "seedid": "",
-            "genid": ""
+            "genid": "",
+            "imagefile": "",
+            "imageurl": ""
         }
-    },
-    "pagecount": 0
+    }
 }
+
 
 
 
