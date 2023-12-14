@@ -106,16 +106,20 @@ storydata_template = {
 
 
 def initialize_session_states():
+    if "storydata" not in st.session_state:
+        st.session_state.storydata = storydata_template
+    if "title" not in st.session_state:
+        st.session_state.title = ""
+    if "summary" not in st.session_state:
+        st.session_state.summary = ""
+    if "character_description" not in st.session_state:
+        st.session_state.character_description = ""
 
-  if "storydata" not in st.session_state:
-    st.session_state.storydata = storydata_template
+    if "awINI" not in st.session_state:
+      st.session_state.awINI = 0
 
-  if "title" not in st.session_state:
-    st.session_state.title = ""
+    if "awAI" not in st.session_state:
+        st.session_state.awAI = 0
 
-  if "summary" not in st.session_state:
-    st.session_state.summary = ""
 
-  if "character_description" not in st.session_state:
-    st.session_state.character_description = ""
 
