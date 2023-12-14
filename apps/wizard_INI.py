@@ -52,7 +52,7 @@ def app_wizard_INI():                                                           
       sdata.update_story_data("plotelements", plot_elements )
       sdata.update_story_data("magicalobjects", magical_objects)
       sdata.update_story_data("character_description", character_description)
-      sdata.update_story_data("provided_image_url", "character_image")
+      sdata.update_story_data("provided_image_url", character_image)
       st.write("Data Submitted")
       
       
