@@ -57,7 +57,8 @@ def app_wizard_INI():
                 formatted_story_data = sdataformat.format_story_data()
                 # Create story details
                 story_details = sdetails.create_story_details(formatted_story_data)
-                # Display or use the story_details as needed
-                st.write("Story details:", story_details)
+                # Save the story details in session state
+                st.session_state.storydatadetails = story_details
+                st.success("Story details have been created and saved.")
             else:
                 st.warning("Please complete the character details first.")
