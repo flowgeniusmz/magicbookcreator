@@ -9,14 +9,14 @@ from story_data import update_story_data
 from apps import wizard_INI as wINI
 from config import sessionstates as ss
 
-# 0. Set page config
-st.set_page_config(page_title = "MagicBook Creator", page_icon = "📚", layout = "wide", initial_sidebar_state = "collapsed")
-ss.initialize_session_states()
+# 0. App Initialization and Setup
+st.set_page_config(page_title="MagicBook Creator", page_icon="📚", layout="wide", initial_sidebar_state="collapsed")                                                # Set page config - must be first "st.___" on page
+ss.initialize_session_States()                                                                                                                                      # Initialize all session_state variables
+ps.set_title("MagicBook", "Creator")                                                                                                                                # Set the title and subtitle using special formating in pagesetup.set_title
+ps.set_page_overview("Welcome to MagicBook Creator!", "MagicBook Creator creates a magical storybook based on your inputs in a matter of minutes! It even creates illustrations based on an image you provide! Follow the wizard below to get your storybook today!")
 
-st.title('Storybook Creator')
-st.markdown("Welcome to the story book creator, a place where AI technology can make any person on the planet the main character! Don't believe me? Give it a shot for yourself!")
-"---"
-tab_INI, tab_AI, tab_BS, tab_DS = st.tabs(["Initial Story Elements", "AI Story Builder", "Build Summary", "Download Story"])
+# 1. Wizard Form Initialization
+tab_INI, tab_AI, tab_BS, tab_DS = st.tabs(["Initial Story Elements", "AI Story Builder", "Build Summary", "Download Story"])                                         # Initialize the tabs of the wizard form
 
 with tab_INI:
     wINI.app_wizard_INI()
