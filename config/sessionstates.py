@@ -17,8 +17,7 @@ storydata_template = {
         "plotelements": "",
         "selectedtheme": "",
         "magicalobjects": "",
-        "tonemood": "",
-        "theme": ""
+        "tonemood": ""
     },
     "pages": {
         "page1": {
