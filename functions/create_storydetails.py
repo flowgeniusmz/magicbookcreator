@@ -9,7 +9,7 @@ threadid = client.beta.threads.create().id
 storybookdata = sdata.get_story_data_nopages()
 
 def create_story_details(varStoryData):
-  
+  alert1 = st.toast("Creating story details...", icon="⏳")
   instructions = f"""
   Create a 10-page storybook outline, narrative, and illustration prompts using the following details:
   
@@ -19,6 +19,8 @@ def create_story_details(varStoryData):
   """
   messageid = oaiAsst.create_thread_message("user", instructions, threadid)
   response = oaiAsst.run_assistant(assistantid, threadid)
+  alert2 = st.toast("Story details created!", icon="✅")
   return response
 
 
+ 
