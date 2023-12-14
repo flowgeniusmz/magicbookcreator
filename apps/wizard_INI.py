@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-from functions import create_tempfile as tf, create_characterdescription as chardesc, generate_image as genimg
+from functions import create_tempfile as tf, create_characterdescription as chardesc, generate_image as genimg, update_storydata as sdata
 
 def app_wizard_INI():
 
@@ -44,7 +44,18 @@ def app_wizard_INI():
 
     submit_storyelements = st.form_submit_button("Submit Story Elements and Create MagicBook!", key="btn_submitform_storyelements")
     if submit_storyelements:
-      st.write("submitted")
+      sdata.update_story_data("character_name", character_name)
+      sdata.update_story_data("character_relation", character_relationship)
+      sdata.update_story_data("selectedtheme", )
+      sdata.update_story_data("genre", )
+      sdata.update_story_data("tonemood", )
+      sdata.update_story_data("setting", )
+      sdata.update_story_data("supportingcharacter", )
+      sdata.update_story_data("plotelements", )
+      sdata.update_story_data("magicalobjects", )
+      sdata.update_story_data("character_description", character_description)
+      sdata.update_story_data("provided_image_url", "character_image")
+      st.write("Data Submitted")
       
       
       
