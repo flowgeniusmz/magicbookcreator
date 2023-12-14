@@ -3,7 +3,7 @@ from openai import OpenAI
 import json
 
 client = OpenAI(api_key = st.secrets.openai.api_key)
-model = "dall-3-3"
+model = "dall-e-3"
 size = "1024x1024"
 quality = "standard"
 
