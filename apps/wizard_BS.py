@@ -3,7 +3,7 @@ from config import pagesetup as ps
 
 # Helper function for creating narrative and illustration containers
 def create_narrative_illustration_container_odd_even(page_num):
-    set_blue_header(f"Page {page_num}")
+    ps.set_blue_header(f"Page {page_num}")
     container = st.container(border = True)  # Create a container for each page
     with container:
         if page_num % 2 == 0:
