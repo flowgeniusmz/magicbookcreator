@@ -144,3 +144,99 @@ def get_buildsummary():
   container8 = st.container(border=True)
   container9 = st.container(border=True)
   container10 = st.container(border=True)
+
+  # Create containers for each page and organize the expanders
+  with container0:
+      st.title(title)
+      st.markdown(summary)
+  
+  with container1:
+      cc1 = st.columns(2)
+      with cc1[0]:
+          with st.expander("Page 1 Narrative", expanded=True):
+              st.write(page1_narrative)
+      with cc1[1]:
+          with st.expander("Page 1 Illustration", expanded=True):
+              st.image(page1_imagefile)
+  
+  with container2:
+      cc2 = st.columns(2)
+      with cc2[0]:
+          with st.expander("Page 2 Illustration", expanded=True):
+              st.image(page2_imagefile)
+      with cc2[1]:
+          with st.expander("Page 2 Narrative", expanded=True):
+              st.write(page2_narrative)
+  
+  with container3:
+      cc3 = st.columns(2)
+      with cc3[0]:
+          with st.expander("Page 3 Narrative", expanded=True):
+              st.write(page3_narrative)
+      with cc3[1]:
+          with st.expander("Page 3 Illustration", expanded=True):
+              st.image(page3_imagefile)
+  
+  with container4:
+      cc4 = st.columns(2)
+      with cc4[0]:
+          with st.expander("Page 4 Illustration", expanded=True):
+              st.image(page4_imagefile)
+      with cc4[1]:
+          with st.expander("Page 4 Narrative", expanded=True):
+              st.write(page4_narrative)
+  
+  with container5:
+      cc5 = st.columns(2)
+      with cc5[0]:
+          with st.expander("Page 5 Narrative", expanded=True):
+              st.write(page5_narrative)
+      with cc5[1]:
+          with st.expander("Page 5 Illustration", expanded=True):
+              st.image(page5_imagefile)
+  
+  with container6:
+      cc6 = st.columns(2)
+      with cc6[0]:
+          with st.expander("Page 6 Illustration", expanded=True):
+              st.image(page6_imagefile)
+      with cc6[1]:
+          with st.expander("Page 6 Narrative", expanded=True):
+              st.write(page6_narrative)
+  
+  with container7:
+      cc7 = st.columns(2)
+      with cc7[0]:
+          with st.expander("Page 7 Narrative", expanded=True):
+              st.write(page7_narrative)
+      with cc7[1]:
+          with st.expander("Page 7 Illustration", expanded=True):
+              st.image(page7_imagefile)
+  
+  with container8:
+      cc8 = st.columns(2)
+      with cc8[0]:
+          with st.expander("Page 8 Illustration", expanded=True):
+              st.image(page8_imagefile)
+      with cc8[1]:
+          with st.expander("Page 8 Narrative", expanded=True):
+              st.write(page8_narrative)
+  
+  with container9:
+      cc9 = st.columns(2)
+      with cc9[0]:
+          with st.expander("Page 9 Narrative", expanded=True):
+              st.write(page9_narrative)
+      with cc9[1]:
+          with st.expander("Page 9 Illustration", expanded=True):
+              st.image(page9_imagefile)
+  
+  with container10:
+      cc10 = st.columns(2)
+      with cc10[0]:
+          with st.expander("Page 10 Illustration", expanded=True):
+              st.image(page10_imagefile)
+      with cc10[1]:
+          with st.expander("Page 10 Narrative", expanded=True):
+              st.write(page10_narrative)
+
