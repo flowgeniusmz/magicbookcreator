@@ -12,66 +12,87 @@ story_data = {
         "page1": {
             "narrative": "",
             "imageprompt": "",
+            "imagefile": "",
+            "imageurl": "",
             "seedid": "",
             "genid": ""
         },
         "page2": {
             "narrative": "",
             "imageprompt": "",
+            "imagefile": "",
+            "imageurl": "",
             "seedid": "",
             "genid": ""
         },
         "page3": {
             "narrative": "",
             "imageprompt": "",
+            "imagefile": "",
+            "imageurl": "",
             "seedid": "",
             "genid": ""
         },
         "page4": {
             "narrative": "",
             "imageprompt": "",
+            "imagefile": "",
+            "imageurl": "",
             "seedid": "",
             "genid": ""
         },
         "page5": {
             "narrative": "",
             "imageprompt": "",
+            "imagefile": "",
+            "imageurl": "",
             "seedid": "",
             "genid": ""
         },
         "page6": {
             "narrative": "",
             "imageprompt": "",
+            "imagefile": "",
+            "imageurl": "",
             "seedid": "",
             "genid": ""
         },
         "page7": {
             "narrative": "",
             "imageprompt": "",
+            "imagefile": "",
+            "imageurl": "",
             "seedid": "",
             "genid": ""
         },
         "page8": {
             "narrative": "",
             "imageprompt": "",
+            "imagefile": "",
+            "imageurl": "",
             "seedid": "",
             "genid": ""
         },
         "page9": {
             "narrative": "",
             "imageprompt": "",
+            "imagefile": "",
+            "imageurl": "",
             "seedid": "",
             "genid": ""
         },
         "page10": {
             "narrative": "",
             "imageprompt": "",
+            "imagefile": "",
+            "imageurl": "",
             "seedid": "",
             "genid": ""
         }
     },
     "pagecount": 0
 }
+
 
 
 
