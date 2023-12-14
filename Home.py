@@ -27,5 +27,5 @@ with tab_AI:
     
     
 with tab_BS:
-    wBS.get_wizard_BS()
+    wBS.app_wizard_BS()
     
