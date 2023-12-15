@@ -31,6 +31,8 @@ def app_wizard_INI():
             if uploaded_img is not None:
                 image = Image.open(uploaded_img)
                 image_path = tf.get_tempfile_path(image)
+                if "uploadedimage" not in st.session_state:
+                    st.session_state.uploadedimage = image_path
                 character_description = chardesc.get_character_description(image_path)
                 character_image = genimg.create_image(character_description)
 
