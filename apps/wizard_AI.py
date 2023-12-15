@@ -7,7 +7,7 @@ client = OpenAI(api_key = st.secrets.openai.api_key)
 
 def app_wizard_AI():
     st.write("AI Story Builder")
-
+    st.write(st.session_state.storydata)
     # Check if story details are available in session state
     if 'storydatadetails' in st.session_state and st.session_state.storydatadetails is not None:
         story_details = st.session_state.storydatadetails
