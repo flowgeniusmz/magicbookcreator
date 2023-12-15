@@ -8,29 +8,6 @@ def app_wizard_INI():
         # File uploader for character image
         uploaded_img = st.file_uploader("Upload a picture of the person/pet you'd like on a card, board, or coloring page", type=['png', 'jpg', 'jpeg', 'gif'])
 
-        if uploaded_img is not None:
-            image = Image.open(uploaded_img)
-            image_path = tf.get_tempfile_path(image)
-            character_description = chardesc.get_character_description(image_path)
-            character_image = genimg.create_image(character_description)
-
-            exp_images = st.expander("View Uploaded and Character Images", expanded=False)
-            with exp_images:
-                cc = st.columns([3,1,3])
-                with cc[0]:
-                    st.image(image, "Uploaded Image")
-                with cc[2]:
-                    st.image(character_image, "Created Image")
-                st.markdown("**Character Description**")
-                st.markdown(character_description)
-
-            # Update character description and image URL in session state
-            st.session_state.storydata["character"]["character_description"] = character_description
-            st.session_state.storydata["character"]["provided_image_url"] = character_image
-
-        else:
-            st.warning("Please upload at least one image of your loved one.")
-
         # Form fields for story elements
         cols_storyelements = st.columns(3)
         with cols_storyelements[0]:
@@ -51,15 +28,33 @@ def app_wizard_INI():
         submit_storyelements = st.form_submit_button("Submit Story Elements and Create MagicBook!")
 
         if submit_storyelements:
-            st.write("Data Submitted")
-            
-            if 'character_description' in st.session_state.storydata["character"] and 'provided_image_url' in st.session_state.storydata["character"]:
-                # Format the story data
-                formatted_story_data = sdataformat.format_story_data()
-                # Create story details
-                story_details = sdetails.create_story_details(formatted_story_data)
-                # Save the story details in session state
-                st.session_state.storydatadetails = story_details
-                st.success("Story details have been created and saved.")
+            if uploaded_img is not None:
+                image = Image.open(uploaded_img)
+                image_path = tf.get_tempfile_path(image)
+                character_description = chardesc.get_character_description(image_path)
+                character_image = genimg.create_image(character_description)
+
+                # Display the generated image and description
+                exp_images = st.expander("View Uploaded and Character Images", expanded=True)
+                with exp_images:
+                    cc = st.columns([3, 1, 3])
+                    with cc[0]:
+                        st.image(image, "Uploaded Image")
+                    with cc[2]:
+                        st.image(character_image, "Created Image")
+                    st.markdown("**Character Description**")
+                    st.markdown(character_description)
+
+                # Update character description and image URL in session state
+                st.session_state.storydata["character"]["character_description"] = character_description
+                st.session_state.storydata["character"]["provided_image_url"] = character_image
             else:
-                st.warning("Please complete the character details first.")
+                st.warning("Please upload at least one image of your loved one.")
+
+            # Format the story data
+            formatted_story_data = sdataformat.format_story_data()
+            # Create story details
+            story_details = sdetails.create_story_details(formatted_story_data)
+            # Save the story details in session state
+            st.session_state.storydatadetails = story_details
+            st.success("Story details have been created and saved.")
