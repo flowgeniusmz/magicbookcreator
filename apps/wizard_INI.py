@@ -52,9 +52,9 @@ def app_wizard_INI():
                 st.warning("Please upload at least one image of your loved one.")
 
             # Format the story data
-            formatted_story_data = sdataformat.format_story_data()
+            #formatted_story_data = sdataformat.format_story_data()
             # Create story details
-            story_details = sdetails.create_story_details(formatted_story_data)
+            story_details = sdetails.create_story_details(st.session_state.storydata)
             # Save the story details in session state
             st.session_state.storydatadetails = story_details
             st.success("Story details have been created and saved.")
