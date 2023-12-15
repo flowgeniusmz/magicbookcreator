@@ -120,7 +120,7 @@ def initialize_session_states():
         st.session_state.runid = ""
     
     if "uploadedimage" not in st.session_state:
-        st.session_state.uploadedimage = ""
+        st.session_state.uploadedimage = None
 
 
     # Initialize top-level elements
