@@ -2,9 +2,14 @@ import streamlit as st
 from apps import wizard_INI as wINI, wizard_BS as wBS, wizard_AI as wAI
 from config import sessionstates as ss, pagesetup as ps
 
+
 # 0. App Initialization and Setup
 st.set_page_config(page_title="MagicBook Creator", page_icon="📚", layout="wide", initial_sidebar_state="collapsed")
-ss.initialize_session_states()  # Initialize all session_state variables
+
+if "initialized" not in st.session_state:
+    st.session_state.initialized = True
+    ss.initialize_session_states()
+    
 ps.set_title("MagicBook", "Creator")
 ps.set_page_overview("Welcome to MagicBook Creator!", "MagicBook Creator creates a magical storybook...")
 
