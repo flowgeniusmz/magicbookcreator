@@ -24,9 +24,5 @@ def app_wizard_AI():
         # Optionally, provide a button or link to go back to the Initial Story Elements tab
         # ...
 
-    threadmessagelist = client.beta.threads.messages.list(
-        thread_id = st.session_state.threadid,
-        order = "asc"
-    )
-    st.markdown(threadmessagelist)
+   
 
