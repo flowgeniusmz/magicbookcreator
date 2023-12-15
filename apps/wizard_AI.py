@@ -1,7 +1,7 @@
 import streamlit as st
 import openai
 from openai import OpenAI
-from functions import get_storydetails as sdetails
+from functions import create_storydetails as sdetails
 
 client = OpenAI(api_key = st.secrets.openai.api_key)
 
