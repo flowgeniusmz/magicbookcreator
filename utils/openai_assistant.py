@@ -11,6 +11,7 @@ def create_thread_message(varRole, varContent, varThreadId):
     thread_id=varThreadId
   )
   thread_message_id = thread_message.id
+  st.session_state.threadid = thread_message_id
   return thread_message_id
 
 def run_assistant(varAssistantId, varThreadId):
@@ -18,6 +19,7 @@ def run_assistant(varAssistantId, varThreadId):
     thread_id=varThreadId,
     assistant_id=varAssistantId
   )
+  st.session_state.runid = run.id
   while run.status == "in-progress" or run.status == "queued":
     time.sleep(0.5)
     run = client.beta.threads.runs.retrieve(
