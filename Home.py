@@ -40,6 +40,6 @@ with cont:
         with col[2]:
             openimage2 = Image.open(st.session_state.storydata["character"]["character_image"])
             st.image(openimage2, "Created Image")
-        st.markdown(f"**Character Description:** {st.session_state.storydata["character"]["character_description"]}")
+        st.markdown(f"""**Character Description:** {st.session_state.storydata["character"]["character_description"]}""")
             
             
