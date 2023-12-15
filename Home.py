@@ -20,5 +20,6 @@ with tab_AI:
 
 with tab_BS:
     wBS.app_wizard_BS()
+    st.write(st.session_state.threadid)
 
 # Additional code for other tabs and functionality
