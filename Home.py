@@ -31,7 +31,7 @@ with tab_BS:
 # Additional code for other tabs and functionality
 cont = st.container(border=True)
 with cont:
-    expd = st.expander(expanded=True)
+    expd = st.expander("Character Images", expanded=True)
     with expd:
         col = st.columns ([3,1,3])
         with col[0]:
