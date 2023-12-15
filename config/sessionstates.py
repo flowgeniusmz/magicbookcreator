@@ -113,6 +113,12 @@ def initialize_session_states():
     if "storydatadetails" not in st.session_state:
         st.session_state.storydatadetails = {}
 
+    if "threadid" not in st.session_state:
+        st.session_state.threadid = ""
+
+    if "runid" not in st.session_state:
+        st.session_state.runid = ""
+
     # Initialize top-level elements
     for key in ['title', 'summary', 'pagecount']:
         if key not in st.session_state:
