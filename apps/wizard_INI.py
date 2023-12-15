@@ -50,13 +50,20 @@ def app_wizard_INI():
                 # Update character description and image URL in session state
                 st.session_state.storydata["character"]["character_description"] = character_description
                 st.session_state.storydata["character"]["provided_image_url"] = character_image
+                st.session_state.storydata["storyelements"]["selectedtheme"] = theme
+                st.session_state.storydata["storyelements"]["genre"] = genre
+                st.session_state.storydata["storyelements"]["tonemood"] = tone
+                st.session_state.storydata["storyelements"]["selectedtheme"] = supporting_character
+                st.session_state.storydata["storyelements"]["magicalobjects"] = magical_objects
+                st.session_state.storydata["storyelements"]["setting"] = setting
+                st.session_state.storydata["storyelements"]["plotelements"] = plot_elements
             else:
                 st.warning("Please upload at least one image of your loved one.")
 
             # Format the story data
             #formatted_story_data = sdataformat.format_story_data()
             # Create story details
-            story_details = sdetails.create_story_details(st.session_state.storydata)
+            #story_details = sdetails.create_story_details(st.session_state.storydata)
             # Save the story details in session state
-            st.session_state.storydatadetails = story_details
+            #st.session_state.storydatadetails = story_details
             st.success("Story details have been created and saved.")
