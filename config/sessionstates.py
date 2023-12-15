@@ -118,6 +118,10 @@ def initialize_session_states():
 
     if "runid" not in st.session_state:
         st.session_state.runid = ""
+    
+    if "uploadedimage" not in st.session_state:
+        st.session_state.uploadedimage = ""
+
 
     # Initialize top-level elements
     for key in ['title', 'summary', 'pagecount']:
