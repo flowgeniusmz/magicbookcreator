@@ -11,7 +11,7 @@ def create_thread_message(varRole, varContent, varThreadId):
     thread_id=varThreadId
   )
   thread_message_id = thread_message.id
-  st.session_state.threadid = thread_message_id
+  st.session_state.threadid = varThreadId
   return thread_message_id
 
 def run_assistant(varAssistantId, varThreadId):
