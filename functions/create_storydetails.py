@@ -6,6 +6,7 @@ from utils import openai_assistant as oaiAsst
 client = OpenAI(api_key = st.secrets.openai.api_key)
 assistantid = st.secrets.openai.assistant_key_magicbook
 threadid = client.beta.threads.create().id
+st.session_state.threadid = threadid
 
 
 def create_story_details(varStoryData):
