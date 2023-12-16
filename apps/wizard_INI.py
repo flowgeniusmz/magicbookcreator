@@ -25,7 +25,7 @@ def app_wizard_INI():
             setting = st.selectbox("Choose the Setting", options=["Enchanted Forest", "Outer Space", "Kingdom", "Under the Sea", "Mystical Mountain", "Surprise Me"], key="storydata['storyelements']['setting']")
             magical_objects = st.selectbox("Choose Magical Objects", options=["Magic Wand", "Enchanted Mirror", "Golden Key", "Flying Carpet", "Invisible Cloak", "Surprise Me"], key="storydata['storyelements']['magicalobjects']")
 
-        submit_storyelements = st.form_submit_button("Submit Story Elements and Create MagicBook!")
+        submit_storyelements = st.form_submit_button("Submit Story Elements and Create MagicBook!", type = "primary", use_container_width = True)
 
         if submit_storyelements:
             if uploaded_img is not None:
