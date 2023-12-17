@@ -58,7 +58,7 @@ def get_character_description(image_path):
 
   msgs = [msg_system, msg_user]
   headers = {"Content-Type": contenttype, "Authorization": authorization}
-  payload = {"model": model, "messages": msgs, "max_tokens": 300}
+  payload = {"model": model, "messages": msgs, "max_tokens": 500}
   response = requests.post(url=url, headers=headers, json=payload)
   response_data = response.json()
   characterdescription = response_data['choices'][0]['message']['content']
