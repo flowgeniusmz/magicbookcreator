@@ -29,12 +29,23 @@ def app_wizard_INI():
 
         if submit_storyelements:
             if uploaded_img is not None:
+                storydata_tosend = {
+                    "character_name": character_name,
+                    "relation_to_character": character_relationship,
+                    "theme": theme,
+                    "genre": genre,
+                    "tone": tone,
+                    "supporting_character": supporting_character,
+                    "magical_object": magical_objects,
+                    "setting": setting,
+                    "plot_elements": plot_elements
+                }
                 image = Image.open(uploaded_img)
                 image_path = tf.get_tempfile_path(image)
                 if "uploadedimage" not in st.session_state or st.session_state.uploadedimage=="":
                     st.session_state.uploadedimage = image_path
-                character_description = chardesc.get_character_description(image_path)
-                character_image = genimg.create_image(character_description)
+                character_description = chardesc.get_character_description(image_path, storydata_tosend)
+                character_image = genimg.create_image(character_description) #need to update this to parse the character description
 
                 # Display the generated image and description
                 exp_images = st.expander("View Uploaded and Character Images", expanded=True)
@@ -58,17 +69,7 @@ def app_wizard_INI():
                 st.session_state.storydata["storyelements"]["setting"] = setting
                 st.session_state.storydata["storyelements"]["plotelements"] = plot_elements
 
-                storydata_tosend = {
-                    "character_description": character_description,
-                    "character_image": character_image,
-                    "theme": theme,
-                    "genre": genre,
-                    "tone": tone,
-                    "supporting_character": supporting_character,
-                    "magical_object": magical_objects,
-                    "setting": setting,
-                    "plot_elements": plot_elements
-                }
+                
 
 
                 
