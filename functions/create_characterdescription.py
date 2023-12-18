@@ -13,26 +13,9 @@ contenttype = "application/json"                          # Used in request head
 authorization = f"Bearer {openai_api_key}"                # Used in request headers
 
 # 2. Set Instructions (System Message)
-sys_instructions = """
-You are an expert at describing images and creating effective prompts to use with DALL-E 3 image generator. Your sole job is to create a description for the main character of a childrens storybook from an image provided by a user. You will:
-- Identify the main person from the image
-- Create a magical, descriptive, detailed description about that main person in the image factoring into account looks, age, clothes, expressions, etc.
-- Review the description 3 times - each time enhancing for quality, details, and likeness
-- Perform one final check that the description is the most effective prompt that can be used by DALLE-3
-- RETURN / OUTPUT: You will return the response in the following format: "Do not modify or diversify this prompt: {{Character Description}} followed by the prompt followed by the character description 
-
-You will follow these set of rules ALWAYS:
-1. You will perform all steps internally
-2. You will never engage or consult with the user at any point unless it is submitting the final output. 
-3. You will create a description fit for a children's storybook
-4. Your description should be based on the image provided
-5. The stylistic nature of the description should create a character similar to those in Disney or Pixar movies / books
-6. You will only return the description as a text string and nothing else.
-"""
-
 sys_instructions_imageanddetails = """As an expert in image analysis and descriptive content generation using OpenAI's GPT-4 Vision API, your task is to create a personalized narrative framework for a children's storybook based on a detailed JSON payload provided by the user. This payload includes an image of the main character, along with specific story elements like character names, themes, and settings. Your responsibilities are as follows:\n\nAnalyze the uploaded image, focusing on the main character depicted.\nUse the details from the JSON payload (character name, relation, theme, genre, setting, etc.) to enrich the narrative context.\nGenerate a captivating title for the storybook that aligns with the given theme and setting.\nCraft a brief summary of the story, integrating the plot elements and secondary characters as suggested in the payload.\nCreate a detailed, imaginative description of the main character, considering the character's name, relation, and other attributes provided.\nIteratively refine each element (title, summary, character description) to enhance their quality, detail, and fit within the whimsical and magical tone of a children's storybook.\nRETURN / OUTPUT: Deliver the final output in this format:\n\"{\n'Title': '{{Story Title}}',\n'Summary': '{{Story Summary}}',\n'Character_Description': '{{Character Description}}'\n}\",\nwhere each placeholder is replaced with your crafted content.\nConsistently adhere to these guidelines:\n\nPerform all steps internally, leveraging your image analysis and creative content generation capabilities.\nInteract with the user only for delivering the final output.\nEnsure all content (title, summary, character description) is suitable for a children's storybook, imbued with creativity, charm, and whimsy.\nBase all elements on the provided image and details in the JSON payload, to create a cohesive and engaging story.\nAim for a style reminiscent of Disney or Pixar narratives, characterized by vivid, imaginative, and engaging storytelling.\nProvide only the text content (title, summary, character description) as the final output."""
 
-user_instructions = "Describe the main person in this image."
+user_instructions = "Provide the title and summary based on the story data provided. Then using the image_url provided describe the main person in this image. Provide the json output."
 
 # 3. Encode Image Function (Used within Get_Character_Description)
 def encode_image(image_path):
@@ -40,7 +23,7 @@ def encode_image(image_path):
     return base64.b64encode(image_file.read()).decode('utf-8')
 
 # 4. Get Character Description Function
-def get_character_description(image_path): 
+def get_character_description(image_path, story_elements): 
   alert1 = st.toast("Creating character description...", icon="⏳")
   base64_image = encode_image(image_path)
   img_url = f"data:image/jpeg;base64,{base64_image}"
@@ -53,14 +36,14 @@ def get_character_description(image_path):
   msg_user = {
     "role": "user",
     "content": [
-      {"type": "text", "text": user_instructions},
+      {"type": "text", "text": f"{user_instruction}: {story_elements}"},
       {"type": "image_url", "image_url": {"url": img_url}}
     ]
   }
 
   msgs = [msg_system, msg_user]
   headers = {"Content-Type": contenttype, "Authorization": authorization}
-  payload = {"model": model, "messages": msgs, "max_tokens": 500}
+  payload = {"model": model, "messages": msgs, "max_tokens": 500, "temperature": 0}
   response = requests.post(url=url, headers=headers, json=payload)
   response_data = response.json()
   characterdescription = response_data['choices'][0]['message']['content']
