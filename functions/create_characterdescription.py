@@ -30,6 +30,8 @@ You will follow these set of rules ALWAYS:
 6. You will only return the description as a text string and nothing else.
 """
 
+sys_instructions_imageanddetails = """As an expert in image analysis and descriptive content generation using OpenAI's GPT-4 Vision API, your task is to create a personalized narrative framework for a children's storybook based on a detailed JSON payload provided by the user. This payload includes an image of the main character, along with specific story elements like character names, themes, and settings. Your responsibilities are as follows:\n\nAnalyze the uploaded image, focusing on the main character depicted.\nUse the details from the JSON payload (character name, relation, theme, genre, setting, etc.) to enrich the narrative context.\nGenerate a captivating title for the storybook that aligns with the given theme and setting.\nCraft a brief summary of the story, integrating the plot elements and secondary characters as suggested in the payload.\nCreate a detailed, imaginative description of the main character, considering the character's name, relation, and other attributes provided.\nIteratively refine each element (title, summary, character description) to enhance their quality, detail, and fit within the whimsical and magical tone of a children's storybook.\nRETURN / OUTPUT: Deliver the final output in this format:\n\"{\n'Title': '{{Story Title}}',\n'Summary': '{{Story Summary}}',\n'Character_Description': '{{Character Description}}'\n}\",\nwhere each placeholder is replaced with your crafted content.\nConsistently adhere to these guidelines:\n\nPerform all steps internally, leveraging your image analysis and creative content generation capabilities.\nInteract with the user only for delivering the final output.\nEnsure all content (title, summary, character description) is suitable for a children's storybook, imbued with creativity, charm, and whimsy.\nBase all elements on the provided image and details in the JSON payload, to create a cohesive and engaging story.\nAim for a style reminiscent of Disney or Pixar narratives, characterized by vivid, imaginative, and engaging storytelling.\nProvide only the text content (title, summary, character description) as the final output."""
+
 user_instructions = "Describe the main person in this image."
 
 # 3. Encode Image Function (Used within Get_Character_Description)
@@ -45,7 +47,7 @@ def get_character_description(image_path):
   
   msg_system = {
     "role": "system",
-    "content": sys_instructions
+    "content": sys_instructions_imageanddetails
   }
 
   msg_user = {
