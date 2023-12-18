@@ -57,6 +57,21 @@ def app_wizard_INI():
                 st.session_state.storydata["storyelements"]["magicalobjects"] = magical_objects
                 st.session_state.storydata["storyelements"]["setting"] = setting
                 st.session_state.storydata["storyelements"]["plotelements"] = plot_elements
+
+                storydata_tosend = {
+                    "character_description": character_description,
+                    "character_image": character_image,
+                    "theme": theme,
+                    "genre": genre,
+                    "tone": tone,
+                    "supporting_character": supporting_character,
+                    "magical_object": magical_objects,
+                    "setting": setting,
+                    "plot_elements": plot_elements
+                }
+
+
+                
             else:
                 st.warning("Please upload at least one image of your loved one.")
 
