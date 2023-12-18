@@ -4,6 +4,10 @@ from functions import create_tempfile as tf, create_characterdescription as char
 from config import storydata_format as sdataformat
 
 def app_wizard_INI():
+    if "createdstorydata" not in st.session_state:
+        st.session_state.createdstorydata = {}
+    if "createdstorydata2" not in st.session_state:
+        st.session_state.createstorydata2 = {}
     with st.form("Initial Story Elements"):
         # File uploader for character image
         uploaded_img = st.file_uploader("Upload a picture of the person/pet you'd like on a card, board, or coloring page", type=['png', 'jpg', 'jpeg', 'gif'])
@@ -40,11 +44,13 @@ def app_wizard_INI():
                     "setting": setting,
                     "plot_elements": plot_elements
                 }
+                st.session_state.createdstorydata = storydata_tosend
                 image = Image.open(uploaded_img)
                 image_path = tf.get_tempfile_path(image)
                 if "uploadedimage" not in st.session_state or st.session_state.uploadedimage=="":
                     st.session_state.uploadedimage = image_path
                 character_description = chardesc.get_character_description(image_path, storydata_tosend)
+                st.session_state.createstorydata2 = character_description
                 character_image = genimg.create_image(character_description) #need to update this to parse the character description
 
                 # Display the generated image and description
@@ -57,7 +63,8 @@ def app_wizard_INI():
                         st.image(character_image, "Created Image")
                     st.markdown("**Character Description**")
                     st.markdown(character_description)
-
+                    st.write(character_description)
+                    st.write(st.session_state.createdstorydata)
                 # Update character description and image URL in session state
                 st.session_state.storydata["character"]["character_description"] = character_description
                 st.session_state.storydata["character"]["provided_image_url"] = character_image
